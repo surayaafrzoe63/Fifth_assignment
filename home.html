@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job Issues Tracker</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
     * {
       font-family: "Geist", sans-serif;
     }
   </style>
-  </head>
+</head>
+
 <body class="bg-[#F8FAFC] min-h-screen ">
   <header>
-    <nav  class="flex justify-between py-4 px-20 bg-[white] shadow">
+    <nav class="flex justify-between py-4 px-20 bg-[white] shadow">
       <div class="flex justify-between gap-0.5 items-center">
         <img class="logo w-[42px] mx-auto" src="assets/github-logo.png" alt="">
         <p class="font-semibold text-2xl text-[#1F2937]">GitHub Issues Tracker</p>
       </div>
-    <div class="flex justify-between gap-3.5">
-     <button class="btn w-[300px] flex justify-start text-[#64748B]"><i class="fa-solid fa-magnifying-glass"></i> Search issues...</button>
-     <button class="btn bg-primary text-[white]"><i class="fa-solid fa-plus"></i> New Issue</button>
-    </div>
+      <div class="flex justify-between gap-3.5">
+        <button class="btn w-[300px] flex justify-start text-[#64748B]"><i class="fa-solid fa-magnifying-glass"></i>
+          Search issues...</button>
+        <button class="btn bg-primary text-[white]"><i class="fa-solid fa-plus"></i> New Issue</button>
+      </div>
     </nav>
   </header>
 
-<!-- card section -->
+  <!-- card section -->
   <section class="pt-[60px]">
     <!-- buttion -->
-    <div class="w-8/12 bg-[red] text-center mx-auto">
-      <h1>HELLO</h1>
+    <div class="w-8/12 p-5 text-left mx-auto">
+      <button class="btn  px-11 py-2.5 bg-primary text-white" id="all-btn">All</button>
+      <button class="btn  px-11 py-2.5 text-[#64748B]" id="open-btn">Open</button>
+      <button class="btn  px-11 py-2.5 text-[#64748B]" id="closed-btn">Closed</button>
     </div>
 
-<!-- card soho main div -->
+    <!-- card soho main div -->
     <main class="w-8/12 mx-auto shadow bg-[white]">
-      <div class=" bg-[green] text-center  mt-4">
-       <h1>HELLO</h1>
-    </div>
 
-<!-- card -->
-    <div class="w-7/12 bg-[blue] text-center mx-auto mt-6">
-       <h1>HELLO</h1>
-    </div>
+
+      <div class="flex justify-between items-center px-6 py-5" >
+        <div class=" flex text-center gap-2giti mt-4">
+        <div><img src="assets/Aperture.png" alt="">
+        </div>
+        <div class="text-left">
+          <p>50 Issues</p>
+          <p>Track and manage your project issues</p>
+        </div>
+      </div>
+      <div class="flex justify-between gap-4">
+        <div><p>Open</p></div>
+        <div><p>Closed</p></div>
+      </div>
+      </div>
+
+      <!-- card -->
+      <div class="w-7/12 bg-[blue] text-center mx-auto mt-6">
+
+      </div>
     </main>
   </section>
+
+  <script src="scripts/script.js">
+
+  </script>
 </body>
+
 </html>
