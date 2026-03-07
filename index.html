@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Issues Tracker</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+    * {
+      font-family: "Geist", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen max-w-md bg-base-200 mx-auto ">
+  <div class="logo w-[100px] mx-auto pt-4">
+    <img class="logo w-[85px] mx-auto" src="assets/github-logo.png" alt="">
+  </div>
+  <div class=" w-[300px] mx-auto pt-2.5 text-center">
+     <h2 class="font-bold text-2xl">GitHub Issues Tracker</h2>
+    <P class="text-[16px] text-[#64748B]">Sign in to manage your issues</P>
+  </div>
+
+  <div class="form pt-8 ">
+    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto bg">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label">Mobile Number</label>
+          <input id="input-number" type="text" maxlength="11" minlength="11" class="input rounded-4xl" placeholder="Enter your number" />
+          <label class="label ">4 Digit Pin</label>
+          <input id="input-pin" type="password" maxlength="4" class="input rounded-4xl" placeholder="Enter 4 Digit Pin" />
+          <button id="login-btn" class="btn btn-primary mt-4 rounded-4xl">Login</button>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+    <script src="scripts/login.js">
+    
+    </script>    
+</body>
+
+</html>
