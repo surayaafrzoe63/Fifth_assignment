@@ -19,6 +19,7 @@
   <style>
     * {
       font-family: "Geist", sans-serif;
+
     }
   </style>
 </head>
@@ -39,39 +40,93 @@
   </header>
 
   <!-- card section -->
-  <section class="pt-[60px]">
+  <section class="pt-[60px] ">
     <!-- buttion -->
-    <div class="w-8/12 p-5 text-left mx-auto">
-      <button class="btn  px-11 py-2.5 bg-primary text-white" id="all-btn">All</button>
-      <button class="btn  px-11 py-2.5 text-[#64748B]" id="open-btn">Open</button>
-      <button class="btn  px-11 py-2.5 text-[#64748B]" id="closed-btn">Closed</button>
+    <div class="w-8/12 p-5 text-left mx-auto shadow bg-[white] mb-4 rounded-lg">
+      <button class="btn  px-11 py-2.5 bg-primary text-white rounded-lg" id="all-btn">All</button>
+      <button class="btn  px-11 py-2.5 text-[#64748B] rounded-lg" id="open-btn">Open</button>
+      <button class="btn  px-11 py-2.5 text-[#64748B] rounded-lg" id="closed-btn">Closed</button>
     </div>
+  </section>
 
-    <!-- card soho main div -->
-    <main class="w-8/12 mx-auto shadow bg-[white]">
+  <!-- card soho main div -->
+  <main class="w-8/12 mx-auto shadow bg-[white] rounded-lg">
 
 
-      <div class="flex justify-between items-center px-6 py-5" >
-        <div class=" flex text-center gap-2giti mt-4">
-        <div><img src="assets/Aperture.png" alt="">
+    <div class="flex justify-between items-center px-4 py-5  border-b-2 border-gray-300">
+      <div class=" flex text-left gap-2 mt-4 ">
+        <div>
+          <img src="assets/Aperture.png" alt="">
         </div>
         <div class="text-left">
-          <p>50 Issues</p>
-          <p>Track and manage your project issues</p>
+          <p class="font-semibold text-[#1F2937] text-xl">50 Issues</p>
+          <p class=" text-[#64748B] text-[18px]">Track and manage your project issues</p>
         </div>
       </div>
       <div class="flex justify-between gap-4">
-        <div><p>Open</p></div>
-        <div><p>Closed</p></div>
+        <div class="flex justify-between items-center gap-1">
+          <img src="assets/Ellipse 2.png" alt="">
+          <p>Open</p>
+        </div>
+        <div class="flex justify-between items-center  gap-1">
+          <img src="assets/Ellipse 2 (1).png" alt="">
+          <p>Closed</p>
+        </div>
       </div>
-      </div>
+    </div>
 
-      <!-- card -->
-      <div class="w-7/12 bg-[blue] text-center mx-auto mt-6">
+    <!-- card -->
+    <div class="w-11/12 text-left mx-auto mt-6 ">
+      <div class="grid grid-cols-4 gap-3" id="all-container">
+        <div class="card bg-base-100 shadow-sm p-2">
 
+          <div class="flex justify-between">
+            <img src="assets/Open-Status.png" alt="">
+            <div class="badge badge-error bg-[#FEECEC] border-none text-[#EF4444]">Error</div>
+          </div>
+
+          <div class="card-body text-left">
+            <h2 class="text-[#1F2937] text-xl font-semibold text-[14px] line-clamp-2">
+              Fix navigation menu on mobile devices
+            </h2>
+            <p class="text-[#64748B] text-xl text-[12px] line-clamp-2">The navigation menu doesn't collapse properly on
+              mobile devices...</p>
+          </div>
+
+
+          <div class=" flex justify-start gap-1.5 border-b-2 border-gray-300 mb-3 pb-3">
+
+            <div class="badge badge-error bg-red-200 rounded-2xl ">
+              <img class="w-full" src="assets/Vector (2).png" alt="">
+              <p class=" text-red-600">Error</p>
+            </div>
+
+            <div class="badge badge-error rounded-2xl bg-[#FDE68A]">
+              <img class="w-full " src="assets/Vector (3).png" alt="">
+              <p class=" text-[#D97706]">Error</p>
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <p class="text-[#64748B] text-[12px]">
+              #1
+              by john_doe
+            </p>
+            <p class="text-[#64748B] text-[12px] ">
+              1/15/2024
+            </p>
+          </div>
+
+        </div>
+        
       </div>
-    </main>
-  </section>
+    </div>
+
+
+
+
+    
+  </main>
+
 
   <script src="scripts/script.js">
 

@@ -15,7 +15,7 @@
 
 // })
 
-
+// toggeling
 const allFilterBtn=document.getElementById("all-btn")
 const openFilterBtn=document.getElementById("open-btn")
 const closedFilterBtn=document.getElementById("closed-btn")
@@ -35,3 +35,17 @@ closedFilterBtn.addEventListener("click",()=>{
   allFilterBtn.classList.remove("bg-primary", "text-white")
    openFilterBtn.classList.remove("bg-primary", "text-white")
 })
+
+
+// json formate
+function loadData (url){
+  fetch(url)
+  .then((res)=>res.json())
+  .then((data)=>displayData(data.data))
+}
+loadData("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+
+function displayData(items){
+  const cardContainer=document.getElementById('card-container')
+    console.log(items);}
+
