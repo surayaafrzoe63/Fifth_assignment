@@ -26,13 +26,13 @@
 
 <body class="bg-[#F8FAFC] min-h-screen ">
   <header>
-    <nav class="flex justify-between py-4 px-20 bg-[white] shadow">
-      <div class="flex justify-between gap-0.5 items-center">
+    <nav class="flex flex-col sm:flex-row justify-between items-center py-4 px-4 sm:px-10 md:px-20 bg-white shadow">
+      <div class="flex justify-center sm:justify-start gap-1 mb-2 sm:mb-0 w-full sm:w-auto">
         <img class="logo w-[42px] mx-auto" src="assets/github-logo.png" alt="">
-        <p class="font-semibold text-2xl text-[#1F2937]">GitHub Issues Tracker</p>
+        <p class="font-semibold text-2xl sm:text[15px] text-[#1F2937]">GitHub Issues Tracker</p>
       </div>
-      <div class="flex justify-between gap-3.5">
-        <button class="btn w-[300px] flex justify-start text-[#64748B]"><i class="fa-solid fa-magnifying-glass"></i>
+      <div class="flex justify-between sm:mt-7 gap-3.5">
+        <button class="btn w-[300px] flex justify-start  text-[#64748B]"><i class="fa-solid fa-magnifying-glass"></i>
           Search issues...</button>
         <button class="btn bg-primary text-[white]"><i class="fa-solid fa-plus"></i> New Issue</button>
       </div>
@@ -45,7 +45,7 @@
   <!-- card section -->
   <section class="pt-[60px] ">
     <!-- buttion -->
-    <div class="w-10/12 p-5 text-left mx-auto shadow sticky top-8 bg-[white] mb-4 rounded-lg">
+    <div class="w-10/12 p-3 mx-auto shadow sticky top-4 bg-white mb-4 rounded-lg grid grid-cols-3 gap-2">
       <button class="btn  px-11 py-2.5 bg-primary text-white rounded-lg" id="all-btn">All</button>
       <button class="btn  px-11 py-2.5 text-[#64748B] rounded-lg" id="open-btn">Open</button>
       <button class="btn  px-11 py-2.5 text-[#64748B] rounded-lg" id="closed-btn">Closed</button>
@@ -88,7 +88,7 @@
 
     <!-- card -->
     <div class="p-3.5 text-left mx-auto mt-6 ">
-      <div class="grid grid-cols-4 gap-3 items-center " id="all-container">
+      <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-3 items-center " id="all-container">
         <!-- <div class="card bg-base-100 shadow-sm p-2">
 
           <div class="flex justify-between">
