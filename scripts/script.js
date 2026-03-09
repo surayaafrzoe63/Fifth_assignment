@@ -9,32 +9,57 @@ function loadData(url){
 }
 loadData("https://phi-lab-server.vercel.app/api/v1/lab/issues")
 
+
+function showSpinner(){
+  spinner.classList.remove("hidden")
+}
+
+function hideSpinner(){
+  spinner.classList.add("hidden")
+}
+
 // toggeling
 const allFilterBtn = document.getElementById("all-btn")
 const openFilterBtn = document.getElementById("open-btn")
 const closedFilterBtn = document.getElementById("closed-btn")
-
+const spinner= document.getElementById("loading-spinner")
 
 allFilterBtn.addEventListener("click", () => {
+  showSpinner()
+  setTimeout(() => {
   allFilterBtn.classList.add("bg-primary", "text-white")
   openFilterBtn.classList.remove("bg-primary", "text-white")
   closedFilterBtn.classList.remove("bg-primary", "text-white")
+  
   displayData(alldata)
+  hideSpinner()
+  }, 300)
 })
+
 openFilterBtn.addEventListener("click", () => {
+  showSpinner()
+   setTimeout(() => {
   openFilterBtn.classList.add("bg-primary", "text-white")
   allFilterBtn.classList.remove("bg-primary", "text-white")
   closedFilterBtn.classList.remove("bg-primary", "text-white")
 
    const openItems = alldata.filter(item => item.priority === "high" || item.priority === "medium")
   displayData(openItems)
+  hideSpinner()
+   }, 300)
 })
+
+
 closedFilterBtn.addEventListener("click", () => {
+  showSpinner()
+  setTimeout(() => {
   closedFilterBtn.classList.add("bg-primary", "text-white")
   allFilterBtn.classList.remove("bg-primary", "text-white")
   openFilterBtn.classList.remove("bg-primary", "text-white")
   const closedItems = alldata.filter(item => item.priority === "low")
   displayData(closedItems)
+  hideSpinner()
+   }, 300)
 })
 
 
@@ -66,9 +91,21 @@ function displayData(items) {
     else {
       priorityColor = "bg-[#EEEFF2] text-[#9CA3AF]"
         image = "assets/Status.png"}
+
+        let borderTop=""
+
+if (item.priority === "high" || item.priority === "medium") {
+  borderTop = "border-t-3 border-[#00A96E]"
+}
+else {
+  borderTop = "border-t-3 border-[#A855F7]"
+}
+
+
+
   
     const div1 = document.createElement("div")
-    div1.className = "card bg-base-100  shadow-sm p-2 h-full ${ border} "
+    div1.className = `card bg-base-100 shadow-sm p-2 h-full ${borderTop}`
     div1.innerHTML = `
           <div class="flex justify-between">
             <img  src="${image}" alt="">
