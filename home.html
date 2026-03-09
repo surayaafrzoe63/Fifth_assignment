@@ -45,7 +45,7 @@
   <!-- card section -->
   <section class="pt-[60px] ">
     <!-- buttion -->
-    <div class="w-10/12 p-5 text-left mx-auto shadow bg-[white] mb-4 rounded-lg">
+    <div class="w-10/12 p-5 text-left mx-auto shadow sticky top-8 bg-[white] mb-4 rounded-lg">
       <button class="btn  px-11 py-2.5 bg-primary text-white rounded-lg" id="all-btn">All</button>
       <button class="btn  px-11 py-2.5 text-[#64748B] rounded-lg" id="open-btn">Open</button>
       <button class="btn  px-11 py-2.5 text-[#64748B] rounded-lg" id="closed-btn">Closed</button>
@@ -139,7 +139,44 @@
       </div>
     </div>
 
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <div id="modal-container" class="">
+          
+        </div>
+        <div class="space-y-6">
+          <!-- <div>
+            <h1>title</h1>
+            <div class="flex justify-start gap-1.5">
+              <button class="btn  px-11 py-2.5 text-[#64748B] rounded-lg" id="open-btn">Open</button>
+              <p>author</p>
+              <p>createdAt</p>
+            </div>
+            <div>
+              label
+            </div>
+            <p>description</p>
+            <div>
+              <div>
+                <p>assignee</p>
+              </div>
+              <div>
+                <p>priority</p>
+              </div>
+            </div> -->
 
+          </div>
+
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+    </dialog>
 
 
 

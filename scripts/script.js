@@ -63,6 +63,78 @@ closedFilterBtn.addEventListener("click", () => {
 })
 
 
+
+//show modal
+const loadInformation=async(id) =>{
+  const url=`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
+  const res= await fetch(url);
+  const details=await res.json();
+  
+  displayInformation(details.data);
+}
+const displayInformation=(item)=>{
+  console.log(item)
+
+  const modalContainer=document.getElementById("modal-container")
+  const statusButtonText = (item.priority === "high" || item.priority === "medium") ? "Open"  : "Closed" ;
+  
+ modalContainer.innerHTML=`<div class="mb-1.5">
+            <h1  class='text-[#1F2937] font-bold text-2xl mb-2'> ${item.title}</h1>
+            <div class="flex justify-start gap-1.5 class="mt-2.5">
+              <button class="btn  px-11 py-2.5 bg-[#00A96E]   text-[#FFFFFF] rounded-lg border-none" id="open-btn">${statusButtonText}</button>
+              <p class='text-[#64748B]'> ${item.author}</p>
+              <p class='text-[#64748B]'>${item.createdAt}</p>
+            </div>
+            <div class="mt-2.5 mb-2.5 flex gap-2">
+             ${item.labels
+        .map((label) => {
+         let labelColor="" 
+if(label === "bug"){
+  labelColor = "bg-[#FEECEC] text-[#EF4444]"
+ 
+}
+else if(label === "help wanted"){
+  labelColor = "bg-[#FFF6D1] text-[#F59E0B]"
+ 
+}
+else if(label === "enhancement"){
+  labelColor = "bg-[#DEFCE8] text-[#00A96E]"
+ 
+
+}
+else{
+  labelColor = "bg-[#FEECEC] text-[#EF4444]";
+  image="assets/Vector (3).png"
+}
+
+         
+          return `<span  class="badge badge-outline ${labelColor}">
+        
+      ${label}
+    </span>`
+        })
+        .join("")
+      }
+            </div>
+            <p class='text-[#64748B]'>${item.description}</p>
+            <div class="flex justify-between">
+              <div>
+                <p class="text-[#1F2937] font-bold">assignee <br> ${item.author}</p>
+              </div>
+               <div>
+               <p> 
+                priority
+               </p>  
+                <div class="badge badge-error  border-none ">${item.priority}
+            </div>  
+            </div>
+            </div>`
+ document.getElementById("my_modal_1").showModal();
+}
+
+
+
+
 // json formate
 
 function displayData(items) {
@@ -103,11 +175,17 @@ else {
 
 
 
+
   
     const div1 = document.createElement("div")
     div1.className = `card bg-base-100 shadow-sm p-2 h-full ${borderTop}`
+    
+    div1.onclick = () => {
+        loadInformation(item.id) // load data & show modal
+    }
+
     div1.innerHTML = `
-          <div class="flex justify-between">
+          <div class="flex justify-between" onclick="loadInformation(${item.id})">
             <img  src="${image}" alt="">
             <div class="badge badge-error  border-none  ${priorityColor}">${item.priority}
             </div>

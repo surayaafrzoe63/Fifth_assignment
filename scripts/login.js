@@ -7,8 +7,8 @@ const pin=pinInput.value
 console.log(pin)
 
 if(show=='admin' && pin=='admin123'){
- alert('Login success')
- window.location.assign('/home.html')
+ 
+ window.location.assign('home.html')
 // window.location.assign('/h')
 }
 else{alert('Login failed')}
